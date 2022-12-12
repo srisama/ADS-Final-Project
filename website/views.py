@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Note
+#from .models import Trip_Advisor_Reviews
+import sqlite3 as sql
 from . import db
 import json
 
@@ -35,3 +37,55 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+@views.route('/about')
+def about():
+    return render_template("about.html", user=current_user)
+
+@views.route('/projectdescription')
+def projectdescription():
+    return render_template("projectdescription.html", user=current_user)
+
+@views.route('/hvacmonitor',methods=['GET'])
+@login_required
+def hvacmonitor():
+    # con1 = sql.connect("instance/database.db")
+    
+    # con1.row_factory = sql.Row
+   
+    # cur1 = con1.cursor()
+    # cur1.execute("select  id,name from finalsentiment_all order by name ")
+   
+    # hotelNames = cur1.fetchall(); 
+    ahunames="xxxxxx"
+    return render_template("hvacmonitor.html", user=current_user, ahus=ahunames)
+
+
+@views.route('/explorationdata')
+def explorationdata():
+    return render_template("explorationdata.html", user=current_user)
+
+    
+@views.route('/visualization')
+def visualization():
+    return render_template("visualization.html", user=current_user)
+
+    
+@views.route('/hvacmonitor',methods=['Post'])
+def ShowRating():
+    
+    postid= request.form.get('option')
+    # con = sql.connect("instance/database.db")
+    
+    # con.row_factory = sql.Row
+    # qid =str.format("select *  from finalsentiment_all Where id={0}" , postid)
+    # cur = con.cursor()
+    # cur.execute(qid)
+    # cur1 = con.cursor()
+    # cur1.execute("select  id,name from finalsentiment_all order by name ")
+   
+    # Ratings = cur.fetchall();    
+    # hotelNames = cur1.fetchall(); 
+
+
+    return render_template("hvacmonitor.html", user=current_user,  hvacname=postid)

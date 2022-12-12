@@ -1,0 +1,116 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+{% block content %}
+<style>
+  .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+
+  
+table {
+  border-collapse: collapse;
+  width: 1000px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+ 
+
+  </style>
+
+<div>
+  <img src="../static/images/sunpharmabanner.jpg" alt="Final Project" width="1000" height="200">
+</div>
+
+<div class="dropdown">
+  <form action="#" name="form" id="form" method="post">
+  <select name="option" width="300px">
+    <option value=AHU-Plant-1 id="hotelid" SELECTED>AHU-Plant-1</option>
+    <option value=AHU-Plant-2 id="hotelid" SELECTED>AHU-Plant-2</option>
+    <option value=AHU-Plant-3 id="hotelid" SELECTED>AHU-Plant-3</option>
+    <option value=AHU-Plant-4 id="hotelid" SELECTED>AHU-Plant-4</option>
+ </select>
+    <input class="button1" type="submit" value="Select" onclick="ShowRating();">
+ </form>
+<div>
+    
+    <div  width="100%">
+   
+        <table class="alert-danger" align="center" WIDTH="600px%" style="margin-top: 10px; margin-left:10px ;">
+          <tr>
+            <td><strong> HVAC : {{hvacname}}</strong></td>
+          </tr>
+          <tr>
+            <td>
+                {%  if hvacname == 'AHU-Plant-1' %}
+                <img src="../static/images/ahu-1.gif" alt="Final Project" >
+                {% elif hvacname == 'AHU-Plant-2'  %}
+                <img src="../static/images/ahu-2.gif" alt="Final Project">
+                {% elif hvacname == 'AHU-Plant-3'  %}
+                <img src="../static/images/ahu-3.gif" alt="Final Project" >
+                {% elif hvacname == 'AHU-Plant-4'  %}
+                <img src="../static/images/ahu-4.gif" alt="Final Project" >
+                {% endif %}
+            </td>
+          </tr>
+      </table>
+    </div>
+ 
+
+ 
+  
+ 
+  
+{% endblock %}

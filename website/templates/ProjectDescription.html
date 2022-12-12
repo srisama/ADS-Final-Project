@@ -1,0 +1,123 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+{% block content %}
+<div class="alert-danger" > 
+<h3 align="center">Project Description</h3>
+<div>
+<p>
+<b>Objective:</b>
+To  optimize  centralized  HVAC  systems  using  machine  learning  techniques.  For  air  conditioners,  air 
+handlers, and heat source equipment, a predictive model using artificial neural networks to develop to 
+predict energy consumption. 
+</p>
+<br>
+<p>
+<b>Usefulness:</b>
+<p>At present, systems are based on approximate models with static parameters. For example, 
+temperature  and  energy  are  often  not  mutually  exclusive.  Furthermore,  these  systems  do 
+not consider environmental changes (occupancy and load). </p>
+
+<p>
+ Machine  learning  algorithms  are  currently  being  used  to  optimize  new  HVAC  (heating, 
+ventilation, and air conditioning) systems.</p>
+
+<p>
+ Hence, by applying deep learning to control the HVAC system and artificial neuron networks 
+(ANNs)  technology  is  a  solution  for  predicting  optimal  HVAC  performance.  Data  is  used  to 
+learn and derive a cooling control policy. Through trial-and-error, Agents can make optimal 
+decisions  even  in  very  complex  environments.  In  addition,  changes  in  the  background  can 
+be adapted (both inside and outside the building or facility).</p>
+
+<p>
+ An energy consumption model using a machine learning algorithm based on artificial neural 
+networks. The proposed HVAC system energy consumption model is evaluated based on the 
+number  of  input  variables,  the  amount  (proportion)  of  training  data,  and  the  number  of 
+neurons. </p>
+
+<p>
+ Also, a standardized reference building will be modeled to generate operational data during 
+extended cooling periods (warm months). Input variables and training data proportions will 
+adjust to improve the prediction accuracy of the HVAC's energy consumption. </p>
+
+<p>
+ The estimation of a building's energy consumption, cooling load, etc., has been studied with 
+high accuracy. The majority of previous research has focused on the entire building system 
+and using machine learning algorithms, Protech is developing management tools for 
+centralized HVAC systems, such as HVAC Management System. </p>
+</p>
+<br>
+<p>
+<b>Data:   </b>
+The dataset is acquired from Progressive Technologies (Protech) on behalf of Sun Pharma. The 
+data files are acquired without being preprocessed. A total of two files are included: 
+EnergyConsumptionHourly.csv and HVACDataHourly.csv and imported to SQLlite DB. 
+
+A  large  number  of  transaction  dates  as  well  as  hourly  energy  consumption  are  included  in  the 
+Energy Consumption Hourly report. In addition, relative Humidity, Dew Point, Supply Temperature,  Set  Temperature,  
+and  Delta  are  all  included  in  the  Hourly  HVAC  History  Data.  A dataset with more than 50000 records contains 
+more than 10 HVACs installed in two locations. 
+
+Datasets  would  need  to  be  cleaned  by  removing  nulls,  if  any.  Utilizing  the  required  fields 
+requires  combining  the  two  datasets  to  achieve  project  goals.  In  addition,  the  data  will  be 
+loaded and preprocessed into a data frame.
+</p>
+<br>
+<p>
+It would be necessary to clean the datasets by removing nulls, curly brackets, and French reviews 
+since they would not be helpful. To accomplish our project goal, we must combine the two datasets 
+to  utilize  the  necessary  fields.  Moreover,  we  plan  to  load  the  data  and  normalize  the  text  after 
+converting the datasets into a data frame.
+</p>
+<br>
+<p>
+<b>Functionalities: </b> 
+  
+A model based on ANNs is being developed and tested based on input parameters, such as the 
+number  of  input  variables,  the  proportion  of  training  data,  and  the  number  of  neurons.  
+
+The data processing flow is divided as below:
+<p>
+1. Section-1:  To  evaluate  correlations  between  possible  parameters,  HVAC  operational data will be used. 
+</p>
+<p>
+2. Section-2:  Presents  an  ANN-based  predictive  energy  consumption  model  for  HVAC systems. Based on optimized input variations.
+</p>
+<p>
+3. Section-3: Considers the accuracy of the predicted models.
+</p>
+<p>
+4. Section-4: Calculates HVAC energy consumption. 
+</p>
+<p>
+5. Section-5: Compares Actual results with predicted results.
+</p>
+<p>
+6. Section-6: Visualization including  select/filter location wise, HVAC unit wise
+</p>
+
+Connecting  nodes  create  a  network  in  an  ANN  model.  Learning  is  processed  based  on  the 
+weight of the nodes between input and target values, and the result is output. An ANN model  has  three  
+layers:  input,  hidden,  and  output.  An  input  value  is  derived  and  transmitted  to  the next 
+node in the input layer. The input layer receives the input signal and performs the neural network operation 
+by connecting the hidden layer nodes. Based on the operation value of the hidden layer, the output layer 
+calculates the final result.  ANN  will  be  used  to  find  the  most  accurate  model  to  predict  the  
+HVAC’s  energy  consumption after  making  a  list  of  input  values  for  the  input  layer.  Here  is  
+a  schematic  diagram  of  the  ANN model  derived  using  MATLAB.  NARX  (Nonlinear  Autoregressive  
+Network  with  Exogenous)  will be  used  in  this  model  to  improve  its  predictive  performance.  
+
+For  the  prediction  of  time  series datasets, NARX is preferred. 
+A schematic diagram of the ANN-based predictive model of HVAC energy consumption is shown in Fig.
+<div class="alert-success"   align="center">
+    <img src="../static/images/PredictiveModelDiagram.jpg" alt="Final Project" >
+</div>
+
+</p>
+ 
+<p>
+<b>Contributions of team members during the Web Application Development is as below:</b>
+</p>
+<b>Individual by  Sridhar Reddy Sama</b>
+
+</div>
+{% endblock %}
+
+</div>
